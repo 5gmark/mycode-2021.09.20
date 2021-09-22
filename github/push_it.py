@@ -11,7 +11,22 @@ imperfect. The intent is for you to gaze upon the building blocks and engage in
 critcal thinking for the next iteration...
 '''
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+import getopt
 import os
+import sys
+
+argumentList = sys.argv[1:]
+options      = "v"
+long_options = ["version"]
+version      = '1.3'
+
+try:
+  arguments, values = getopt.getopt(argumentList, options, long_options)
+  for currentArgument, currentValue in arguments:
+    if currentArgument in ("-v", "--version"):
+      print ("pushit " + version)
+except:
+  pass
 
 commit_message    = input('Commit Comment: ')
 #working_directory = 'cd ~/mycode'
@@ -25,3 +40,4 @@ os.chdir(working_directory)
 os.system(git_add)
 os.system(git_commit)
 os.system(git_push)
+# <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
