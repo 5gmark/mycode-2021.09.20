@@ -15,31 +15,26 @@ import getopt
 import os
 import sys
 
-
-
 def main():
   argumentList = sys.argv[1:]
   options      = "v"
   long_options = ["version"]
-  version      = '1.4'
+  version      = '1.5'
   try:
     arguments, values = getopt.getopt(argumentList, options, long_options)
     for currentArgument, currentValue in arguments:
       if currentArgument in ("-v", "--version"):
-        print ("pushit " + version)
-        break
+        print (os.path.basename(sys.argv[0]), version)
   except:
     pass
 
   if len(sys.argv) == 1:
     commit_message    = input('Commit Comment: ')
-    #working_directory = 'cd ~/mycode'
     working_directory = '/home/student/mycode'
     git_add           = 'git add *'
     git_commit        = 'git commit -m "' + commit_message + '"'
     git_push          = 'git push origin'
 
-    #os.system(working_directory)
     os.chdir(working_directory)
     os.system(git_add)
     os.system(git_commit)
