@@ -1,4 +1,4 @@
-!/usr/bin/env python3
+#!/usr/bin/env python3
 """Alta3 Research | RZFeeser@alta3.com
    Using python to create compressed (zipped) archives"""
 
@@ -13,7 +13,8 @@ def zipdir(dirpath, zipfileobj):
     # thats a fancy wany of saying it returns 3 things
     # always in the order... root, dirs, files
     # so the following line says given that you will return to us roots, dirs and files...
-    for root, dirs, files in os.walk(dirpath):
+#    for root, dirs, files in os.walk(dirpath):
+    for root, files in os.walk(dirpath):
         for file in files:  # we only want to loop across the file component
             print(os.path.join(root,file))   # create an aboslute path of where file lives
             zipfileobj.write(os.path.join(root, file)) ## adds files to our zipfileobject that was passed in
