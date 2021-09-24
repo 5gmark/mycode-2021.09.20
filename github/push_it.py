@@ -33,8 +33,12 @@ def main():
   except:
     pass
 
-  if len(sys.argv) == 1:
-    commit_message    = input('Commit Comment: ')
+  if len(sys.argv) == 1 or currentValue:
+    print(bool(currentValue))
+    if bool(currentValue):
+      commit_message    = input('Commit Comment: ')
+    else:
+      commit_message    = currentValue
     working_directory = '/home/student/mycode'
     git_add           = 'git add *'
     git_commit        = 'git commit -m "' + commit_message + '"'
