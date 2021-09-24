@@ -17,18 +17,13 @@ import sys
 
 def main():
   argumentList = sys.argv[1:]
-  options      = "c:hv"
-  long_options = ["comment","help","version"]
-  version      = '1.6'
+  options      = "v"
+  long_options = ["version"]
+  version      = '1.5'
   try:
     arguments, values = getopt.getopt(argumentList, options, long_options)
     for currentArgument, currentValue in arguments:
-      if currentArgument in ("-c", "--comment"):
-        print (("Git Comment: (% s)") % (currentValue))
-#        print (("Comment... (%s)") % (comment1))
-      elif currentArgument in ("-h", "--help"):
-        print ("Help me...")
-      elif currentArgument in ("-v", "--version"):
+      if currentArgument in ("-v", "--version"):
         print (os.path.basename(sys.argv[0]), version)
   except:
     pass
