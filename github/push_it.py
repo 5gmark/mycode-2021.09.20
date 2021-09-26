@@ -25,8 +25,6 @@ def get_arguments(git_comment):
     for currentArgument, currentValue in arguments:
       if currentArgument in ("-c", "--comment"):
         return currentValue
-#        git_comment = currentValue
-#        return git_comment
       elif currentArgument in ("-h", "--help"):
         print ("WIP: Help me...")
       elif currentArgument in ("-m", "--man-page"):
@@ -38,14 +36,11 @@ def get_arguments(git_comment):
   except:
     print("Error 101")
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
-def main():
-  comment1 = ""
-  comment1 = get_arguments(comment1)
-
-  if len(sys.argv) == 1 or comment1:
-    print(bool(comment1))
-    if bool(comment1):
-      commit_message    = comment1
+def run_the_4_commands(git_comment):
+  if len(sys.argv) == 1 or git_comment:
+    print(bool(git_comment))
+    if bool(git_comment):
+      commit_message    = git_comment
     else:
       commit_message    = input('Commit Comment: ')
     working_directory = '/home/student/mycode'
@@ -57,7 +52,12 @@ def main():
     os.system(git_add)
     os.system(git_commit)
     os.system(git_push)
-
+# <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+def main():
+  comment1 = ""
+  comment1 = get_arguments(comment1)
+  run_the_4_commands(comment1)
+# <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 if __name__ == "__main__":
     main()
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
