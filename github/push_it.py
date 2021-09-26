@@ -48,10 +48,10 @@ def run_the_4_commands(git_comment):
     git_commit        = 'git commit -m "' + commit_message + '"'
     git_push          = 'git push origin'
 
-    os.chdir(working_directory)
-    os.system(git_add)
-    os.system(git_commit)
-    os.system(git_push)
+    os.chdir(working_directory) # Command 1.
+    os.system(git_add)          # Command 2.
+    os.system(git_commit)       # Command 3.
+    os.system(git_push)         # Command 4.
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
 def main():
   run_the_4_commands(get_arguments(""))
