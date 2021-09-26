@@ -24,7 +24,9 @@ def main():
     arguments, values = getopt.getopt(argumentList, options, long_options)
     for currentArgument, currentValue in arguments:
       if currentArgument in ("-c", "--comment"):
-        print (("Git Comment: (% s)") % (currentValue))
+        comment1 = currentValue
+        print(comment1)
+#        print (("Git Comment: (% s)") % (currentValue))
 #        print (("Comment... (%s)") % (comment1))
       elif currentArgument in ("-h", "--help"):
         print ("Help me...")
@@ -33,12 +35,12 @@ def main():
   except:
     pass
 
-  if len(sys.argv) == 1 or currentValue:
-    print(bool(currentValue))
-    if bool(currentValue):
-      commit_message    = input('Commit Comment: ')
+  if len(sys.argv) == 1 or comment1:
+    print(bool(comment1))
+    if bool(comment1):
+      commit_message    = comment1
     else:
-      commit_message    = currentValue
+      commit_message    = input('Commit Comment: ')
     working_directory = '/home/student/mycode'
     git_add           = 'git add *'
     git_commit        = 'git commit -m "' + commit_message + '"'
