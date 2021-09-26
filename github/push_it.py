@@ -14,10 +14,10 @@ critcal thinking for the next iteration...
 import getopt
 import os
 import sys
-
-def main():
+# <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+def get_arguments(git_comment):
   argumentList = sys.argv[1:]
-  comment1     = ""
+#  comment1     = ""
   options      = "c:hmsv"
   long_options = ["comment","help","man-page","symbolic-link","version"]
   version      = '1.6'
@@ -25,8 +25,8 @@ def main():
     arguments, values = getopt.getopt(argumentList, options, long_options)
     for currentArgument, currentValue in arguments:
       if currentArgument in ("-c", "--comment"):
-        comment1 = currentValue
-        print(comment1)
+        git_comment = currentValue
+        return git_comment
       elif currentArgument in ("-h", "--help"):
         print ("WIP: Help me...")
       elif currentArgument in ("-m", "--man-page"):
@@ -36,7 +36,33 @@ def main():
       elif currentArgument in ("-v", "--version"):
         print (os.path.basename(sys.argv[0]), version)
   except:
-    pass
+    print("Error 101")
+# <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+def main():
+#  argumentList = sys.argv[1:]
+  comment1     = ""
+#  options      = "c:hmsv"
+#  long_options = ["comment","help","man-page","symbolic-link","version"]
+#  version      = '1.6'
+#  try:
+#    arguments, values = getopt.getopt(argumentList, options, long_options)
+#    for currentArgument, currentValue in arguments:
+#      if currentArgument in ("-c", "--comment"):
+#        comment1 = currentValue
+#        print(comment1)
+#      elif currentArgument in ("-h", "--help"):
+#        print ("WIP: Help me...")
+#      elif currentArgument in ("-m", "--man-page"):
+#        print ("WIP: Install " + os.path.basename(sys.argv[0]) + " man page.")
+#      elif currentArgument in ("-s", "--symbolic-link"):
+#        print ("WIP: Symbolic link...")
+#      elif currentArgument in ("-v", "--version"):
+#        print (os.path.basename(sys.argv[0]), version)
+#  except:
+#    print("Error 101")
+  comment1 = get_arguments(comment1)
+  print(comment1)
 
   if len(sys.argv) == 1 or comment1:
     print(bool(comment1))
