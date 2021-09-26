@@ -17,8 +17,9 @@ import sys
 
 def main():
   argumentList = sys.argv[1:]
-  options      = "c:hv"
-  long_options = ["comment","help","version"]
+  comment1     = ""
+  options      = "c:hmsv"
+  long_options = ["comment","help","man-page","symbolic-link","version"]
   version      = '1.6'
   try:
     arguments, values = getopt.getopt(argumentList, options, long_options)
@@ -26,10 +27,12 @@ def main():
       if currentArgument in ("-c", "--comment"):
         comment1 = currentValue
         print(comment1)
-#        print (("Git Comment: (% s)") % (currentValue))
-#        print (("Comment... (%s)") % (comment1))
       elif currentArgument in ("-h", "--help"):
-        print ("Help me...")
+        print ("WIP: Help me...")
+      elif currentArgument in ("-m", "--man-page"):
+        print ("WIP: Install " + os.path.basename(sys.argv[0]) + " man page.")
+      elif currentArgument in ("-s", "--symbolic-link"):
+        print ("WIP: Symbolic link...")
       elif currentArgument in ("-v", "--version"):
         print (os.path.basename(sys.argv[0]), version)
   except:
