@@ -62,7 +62,6 @@ def main():
 #  except:
 #    print("Error 101")
   comment1 = get_arguments(comment1)
-  print(comment1)
 
   if len(sys.argv) == 1 or comment1:
     print(bool(comment1))
