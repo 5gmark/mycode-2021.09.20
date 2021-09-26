@@ -54,8 +54,7 @@ def run_the_4_commands(git_comment):
     os.system(git_push)
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
 def main():
-  comment = get_arguments("")
-  run_the_4_commands(comment)
+  run_the_4_commands(get_arguments(""))
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 if __name__ == "__main__":
     main()
