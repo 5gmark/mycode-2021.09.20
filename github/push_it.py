@@ -38,7 +38,6 @@ def get_arguments(git_comment):
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
 def run_the_4_commands(git_comment):
   if len(sys.argv) == 1 or git_comment:
-    print(bool(git_comment))
     if bool(git_comment):
       commit_message    = git_comment
     else:
